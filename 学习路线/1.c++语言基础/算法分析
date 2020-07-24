@@ -1,1 +1,29 @@
-
+//算法1
+//移动0，移动数字，移动重复数字（只出现两次等类型题目）
+//移动0，给出数组[0,1,2,0,3,4,0,0,0]
+#include<iostream>
+using namespace std;
+void MoveZero(vector<int>& nums)
+{
+    int i=0,j=0,len=nums.size();
+    while(j<len)
+    {
+      if(nums[j]!=0)
+       { 
+       nums[i]=nums[j];
+       i++;
+       }
+       j++;
+     }
+     for(;i<len;i++)
+     {
+      nums[i]=0;
+      }
+      return;
+}
+int main()
+{
+  vector<int>nums={0,1,2,0,3,4,0,0,0};
+  MoveZero(nums);
+  return 0;
+}
